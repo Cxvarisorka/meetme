@@ -13,8 +13,8 @@ const likeRouter = require("./routers/like.router");
 const app = express();
 
 app.use(cors({
-    origin: "https://meetme-neon.vercel.app", // your React app origin
-    credentials: true               // ✅ allow credentials
+    origin: "https://meetme-neon.vercel.app",
+    credentials: true             
 }));
 
 app.use(cookieParser());

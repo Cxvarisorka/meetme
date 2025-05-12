@@ -61,10 +61,10 @@ const userLogin = async (req, res) => {
         );
         
         res.cookie('token', token, {
-            httpOnly: false, // Prevent access via JavaScript
-            secure: process.env.NODE_ENV === 'production', // Use true in production, false in development
-            sameSite: 'Strict',  // Ensure SameSite is configured to avoid issues with cross-site requests
-            expires: new Date(Date.now() + 86400000), // 1 day expiry
+            httpOnly: false, 
+            secure: true, 
+            sameSite: 'None', 
+            expires: new Date(Date.now() + 86400000), 
         });
         
 

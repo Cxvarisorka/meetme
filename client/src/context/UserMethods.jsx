@@ -15,19 +15,16 @@ export const UserMethodsProvider = ({ children }) => {
     const uploadProfileImg = useCallback(async (formData) => {
         try {
             // Retrieve the token from cookies
-            const token = Cookies.get("token");
+            // const token = Cookies.get("token");
     
-            // Check if token exists
-            if (!token) {
-                alert("You must be logged in to upload a profile image.");
-                return;
-            }
+            // // Check if token exists
+            // if (!token) {
+            //     alert("You must be logged in to upload a profile image.");
+            //     return;
+            // }
     
             const res = await fetch(`${API_URL}/user/upload-profile`, {
                 method: "POST",
-                headers: {
-                    "Authorization": `Bearer ${token}`,  // Send token in Authorization header
-                },
                 body: formData,
                 credentials: "include",  // Ensure cookies are sent with the request
             });

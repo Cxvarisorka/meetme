@@ -13,7 +13,7 @@ const likeRouter = require("./routers/like.router");
 const app = express();
 
 app.use(cors({
-    origin: "*", // your React app origin
+    origin: "https://vercel.com/cxvarisorkas-projects/meetme/4ew4NbwaumJTfniuxQzSe4vsZgRt", // your React app origin
     credentials: true               // ✅ allow credentials
 }));
 

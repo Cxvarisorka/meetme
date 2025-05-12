@@ -5,7 +5,7 @@ import Cookies from 'js-cookie'; // You need to install js-cookie to handle cook
 
 export const AuthContext = createContext();
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://meetme-77tz.onrender.com";
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
     
         if (!token) return null; 
     
-        const response = await fetch("http://localhost:3000/user/verify-token", {
+        const response = await fetch(`${API_URL}/user/verify-token`, {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,  

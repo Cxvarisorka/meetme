@@ -3,7 +3,7 @@ import { AuthContext } from './AuthContext';
 
 export const PostContext = createContext();
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://meetme-77tz.onrender.com";
 
 export const PostProvider = ({ children }) => {
     const {user} = useContext(AuthContext);

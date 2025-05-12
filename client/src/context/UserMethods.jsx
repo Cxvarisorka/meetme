@@ -6,7 +6,7 @@ import { AuthContext } from "./AuthContext";
 
 export const UserMethodsContext = createContext();
 
-const API_URL = "http://localhost:3000";
+const API_URL = "https://meetme-77tz.onrender.com";
 
 export const UserMethodsProvider = ({ children }) => {
     const navigate = useNavigate();

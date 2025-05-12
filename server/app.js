@@ -13,7 +13,7 @@ const likeRouter = require("./routers/like.router");
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173", // your React app origin
+    origin: "*", // your React app origin
     credentials: true               // ✅ allow credentials
 }));
 

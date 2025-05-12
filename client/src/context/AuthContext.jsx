@@ -12,28 +12,21 @@ export const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     const checkLoggedInUser = async () => {
-        const token = Cookies.get("token"); 
-    
-        if (!token) return null; 
-    
         const response = await fetch(`${API_URL}/user/verify-token`, {
             method: "POST",
-            headers: {
-                "Authorization": `Bearer ${token}`,  
-            },
-            credentials: "include"
+            credentials: "include"  // include cookies automatically
         });
-    
+
         if (!response.ok) {
-            Cookies.remove("token"); 
             setUser(null);
             return;
         }
-    
+
         const data = await response.json(); 
         setUser(data);
         navigate("/profile");
     };
+
     
     useEffect(() => {
         checkLoggedInUser();

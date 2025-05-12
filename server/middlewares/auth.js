@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 
 // This middleware will verify the JWT token
 const verifyToken = (req, res, next) => {
-    const token = req.cookies.token || req.headers.authorization?.split(' ')[1]; // Get token from cookie or authorization header
+    const token = req.cookies.token;
 
     if (!token) {
         return res.status(401).json({ message: "User Should Be Logedin" });  // Token is required for protected routes
